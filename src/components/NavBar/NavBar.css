@@ -1,0 +1,297 @@
+/* .logo {
+  height: 100px;
+  padding: 12px;
+}
+
+.left-item,
+.right-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+
+  height: 100px;
+  z-index: 100;
+  border-radius: 8px;
+
+  padding: 15px 30px;
+
+  justify-content: space-between;
+  display: flex;
+
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+  letter-spacing: 0.03em;
+
+  margin-right: 15px;
+  font-size: 45px;
+  color: rgb(8, 8, 78);
+  line-height: 0.8;
+}
+
+.menu,
+.cart {
+  cursor: pointer;
+}
+
+.center {
+  width: 350px;
+}
+
+@media (max-width: 850px) {
+  .logo {
+    height: 70px;
+    padding: 10px;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+
+  .center {
+    width: 300px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 630px) {
+  .logo {
+    height: 60px;
+    padding: 5px;
+  }
+  .left-item {
+    position: absolute;
+    top: 20px;
+  }
+
+  .center {
+    position: absolute;
+    top: 90px;
+  }
+  .heading {
+    margin-top: 20px;
+  }
+  .right-item {
+    position: absolute;
+    right: 0;
+  }
+
+  .nav {
+    position: relative;
+    height: 150px;
+
+    padding: 15px 30px;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+
+  .center {
+    max-width: 250px;
+    margin: 0 0;
+  }
+} */
+
+.logo {
+  height: 100px;
+  padding: 12px;
+}
+
+.left-item,
+.right-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  z-index: 100;
+  border-radius: 8px;
+
+  padding: 15px 30px;
+
+  justify-content: space-between;
+  display: flex;
+
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, #94bbe9 100%);
+}
+
+.heading {
+  letter-spacing: 0.03em;
+
+  margin-right: 15px;
+  font-size: 45px;
+  color: rgb(8, 8, 78);
+  line-height: 0.8;
+}
+
+.menu,
+.cart {
+  cursor: pointer;
+}
+
+.cart-img {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  min-width: 25px;
+  height: 25px;
+  /* padding: 3px; */
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+  bottom: 0;
+  right: 10px;
+}
+
+.cart:hover,
+.menu:hover {
+  transform: scale(1.1);
+}
+
+.center {
+  width: 350px;
+}
+
+.menu .clicked {
+  transform: scale(1.1);
+}
+
+.error {
+  padding: 10px;
+  font-size: 14px;
+  color: red;
+  z-index: 100;
+  animation: slideDown 0.3s ease-out;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 63px;
+  width: 80%;
+  max-height: 250px;
+  z-index: 10;
+  border: 1px solid #ebfffc;
+  border-top: none;
+  list-style: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow-y: auto;
+  background-color: #fff;
+
+  animation: slideDown 0.3s ease-out;
+
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: transparent transparent; /* For Firefox */
+}
+
+/* Scrollbar styling for Webkit browsers (Chrome, Safari) */
+.suggestions-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.suggestions-list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.suggestions-list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Slide down keyframes */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-item {
+  background-color: #ebfffc;
+  cursor: pointer;
+  color: rgb(8, 8, 78);
+}
+
+.suggestion-item:hover {
+  background-color: rgb(238, 174, 202);
+}
+
+@media (850px<width) {
+  .cart-count {
+    right: 28px;
+    bottom: 15px;
+  }
+}
+@media (max-width: 850px) {
+  .logo {
+    height: 70px;
+    padding: 2px;
+  }
+
+  .heading {
+    margin-top: 10px;
+    font-size: 35px;
+  }
+
+  .center {
+    width: 300px;
+    margin: 0 10px;
+  }
+}
+
+@media (400px<width<=850px) {
+  .suggestions-list {
+    top: 56px;
+  }
+}
+
+@media (max-width: 650px) {
+  .logo {
+    height: 67px;
+  }
+  .left-item {
+    order: 1;
+  }
+
+  .center {
+    order: 3;
+    height: 70px;
+    max-width: 300px;
+    margin: 0 0;
+  }
+  .heading {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .right-item {
+    order: 2;
+  }
+
+  .nav {
+    height: 150px;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+  }
+}
